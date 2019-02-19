@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script type="text/javascript" src="@Url.Content("/Scripts/jquery-3.3.1.min.js")"></script>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <h4 class="mt-5">Welcome!Please edit your informations here:</h4>
+                <form action="/Home/Edit" method="post">
+                    <div class="form-group ">
+                        <label for="MyFileName">First Name:</label>
+                        <input type="text" class="form-control" id="MyFirstName" name="MyFirstName" value="@ViewBag.FirstName" placeholder="Enter Your FirtName here">
+                    </div>
+                    <div class="form-group">
+                        <label for="MyFileName">Last Name:</label>
+                        <input type="text" class="form-control" id="MyLastName" name="MyLastName" value="@ViewBag.LastName" placeholder="Enter Your LastName here">
+                    </div>
+                    <div class="form-group">
+                        <label for="MyAddress">Address:</label>
+                        <input type="text" class="form-control" id="MyAddress" name="MyAddress" value="@ViewBag.Address" placeholder="Enter Your Address here">
+                    </div>
+                    <div class="form-group">
+                        <label for="MyEmail">Email:</label>
+                        <input type="text" class="form-control" id="MyEmail" name="MyEmail" value="@ViewBag.Email" placeholder="Enter Your LastName here">
+                    </div>
+                    <button type="submit" class="btn btn-primary" value="Edit" name="Edit">Edit</button>
+
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+   
+</body>
+</html>

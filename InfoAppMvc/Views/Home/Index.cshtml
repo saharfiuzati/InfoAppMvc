@@ -1,0 +1,51 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script type="text/javascript" src="@Url.Content("/Scripts/jquery-3.3.1.min.js")"></script>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <h4 class="mt-5">Welcome!Please enter your informations below:</h4>
+                <form action="/Home/Index" method="post">
+                    <div class="form-group ">
+                        <label for="MyFileName">First Name:</label>
+                        <input type="text" class="form-control" id="MyFirstName" name="MyFirstName" value="" placeholder="Enter Your FirtName here">
+                    </div>
+                    <div class="form-group">
+                        <label for="MyFileName">Last Name:</label>
+                        <input type="text" class="form-control" id="MyLastName" name="MyLastName" value="" placeholder="Enter Your LastName here">
+                    </div>
+                    <button type="submit" class="btn btn-primary" value="Continue" name="Continue">Save and Continue</button>
+                    
+                    <div>
+                        <label for="StartOver" class="font-weight-bold mt-5 text-success"> @ViewBag.Name</label>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    @*<script>
+        $(function () {
+            $('#saveexit').click(function (e) {
+                e.preventDefault();            
+                $.ajax({
+                    type: "POST",
+                    url: "@Url.Action("Index")",
+                    data: $('form').serialize(),
+                    success: function () {                        
+                        window.close(); 
+                    }
+                });
+            });
+        });        
+    </script>*@
+</body>
+</html>
